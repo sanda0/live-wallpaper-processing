@@ -12,7 +12,7 @@ class dot {
 
   public void draw() {
     //print("ok");
-    ellipse(this.x, this.y, 6, 6);
+    ellipse(this.x, this.y, 10, 10);
   }
 
   public void update() {

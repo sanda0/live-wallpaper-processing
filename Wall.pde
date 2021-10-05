@@ -15,18 +15,19 @@ void setup() {
 void draw() {
   background(10);
   noStroke();
-  fill(255);
+  fill((int)random(100, 255), (int)random(100, 255), (int)random(100, 255));
   for (dot d : dotlist) {
     d.draw();
     d.update();
   }
-  stroke(255);
+  strokeWeight(2);
   for (dot d : dotlist) {
     for (dot d2 : dotlist) {
       if (d.x != d2.x && d.y != d2.x) {
         int dis = (int)sqrt((int)sq(d.x-d2.x) +(int)sq(d.y-d2.y));
         //println(dis);
-        if (dis < 200) {
+        if (dis <= 300) {
+          stroke((int)random(100, 255), (int)random(100, 255), (int)random(100, 255),(290-dis)/2);
           line(d.x, d.y, d2.x, d2.y);
         }
       }
@@ -34,10 +35,10 @@ void draw() {
     if (mousePressed == true) {
       int dis = (int)sqrt((int)sq(d.x-mouseX) +(int)sq(d.y-mouseY));
       if (dis < 500) {
+        stroke((int)random(100, 255), (int)random(100, 255), (int)random(100, 255),(490-dis)/2);
         line(d.x, d.y, mouseX, mouseY);
+        ellipse(mouseX, mouseY, 15, 15);
       }
     }
   }
 }
-
-void 
